@@ -1,0 +1,39 @@
+From fc700818cce0b97b1c4cdd44bcfc75fc8637264b Mon Sep 17 00:00:00 2001
+From: yangfl <yangfl@users.noreply.github.com>
+Date: Wed, 15 Jun 2022 15:12:11 +0800
+Subject: [PATCH 2/3] Rewrite tests/Makefile
+
+---
+ tests/Makefile | 14 ++++++++------
+ 1 file changed, 8 insertions(+), 6 deletions(-)
+
+diff --git a/tests/Makefile b/tests/Makefile
+index 3b2980f..6396ac5 100644
+--- a/tests/Makefile
++++ b/tests/Makefile
+@@ -1,14 +1,16 @@
+-CC=g++
+-CFLAGS=-Wall -std=c++11
+-CPPFLAGS=-Wall -std=c++11
+-LDFLAGS=-lpthread -lgtest -lgtest_main -lpthread -L/usr/lib -L/usr/lib/x86_64-linux-gnu
++PKG_CONFIG?=pkg-config
++
++CXXFLAGS+=-Wall -std=c++11 -DSI_CONVERT_ICU -DSI_SUPPORT_IOSTREAMS
++LDFLAGS+=-lpthread -lgtest -lgtest_main -lpthread -lsimpleini $(shell $(PKG_CONFIG) --libs icu-io) -L.. -Wl,-rpath-link=$(pwd)
+ 
+ OBJS=ts-roundtrip.o ts-snippets.o ts-utf8.o ts-bugfix.o ts-quotes.o ts-noconvert.o
+ 
+ BIN=./tests
+ 
+-all: $(OBJS)
+-	$(CC) -o $(BIN) $(OBJS) $(LDFLAGS)
++all: test
++
++$(BIN): $(OBJS)
++	$(CXX) -o $(BIN) $(OBJS) $(LDFLAGS)
+ 
+ clean:
+ 	rm -f core $(OBJS) $(BIN)
+-- 
+2.35.1
+

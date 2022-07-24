@@ -1,0 +1,60 @@
+libsimpleini (4.19.1~ubuntu22.10.1) kinetic; urgency=emergency
+
+  * New upstream release
+  * Fix cross misbuild: use correct multiarch libdir (Closes: #968223)
+  * Bump Standards-Version to 4.6.1
+
+ -- Goran Vidovic (gogo) <trebelnik2@gmail.com.com>  Sun, 24 Jul 2022 11:10:04 +0200
+
+libsimpleini (4.17+dfsg-6) unstable; urgency=medium
+
+  * Add build libicu-dev for libsimpleini-dev
+  * Bump Standards-Version to 4.5.0
+  * Bump debhelper compat to 13
+  * Add upstream metadata
+
+ -- Yangfl <mmyangfl@gmail.com>  Sat, 18 Jul 2020 00:41:12 +0800
+
+libsimpleini (4.17+dfsg-5) unstable; urgency=medium
+
+  * Team upload.
+  * Rebuild against gcc 8.
+  * debian/control: Remove myself from uploaders list.
+  * debian/control: Bump Standards-Version to 4.2.1 (no changes needed).
+  * debian/rules: Use pkgkde-symbolshelper to handle symbols.
+
+ -- Boyuan Yang <byang@debian.org>  Fri, 14 Sep 2018 16:13:36 -0400
+
+libsimpleini (4.17+dfsg-4) unstable; urgency=medium
+
+  * Reconfirm symbols using buildd logs.
+  * d/control: Bump Standards-Version to 4.1.4 (no changes needed).
+  * d/rules: Use "dh_missing --fail-missing".
+
+ -- Boyuan Yang <073plan@gmail.com>  Fri, 11 May 2018 21:27:41 +0800
+
+libsimpleini (4.17+dfsg-3) unstable; urgency=medium
+
+  [ Yangfl ]
+  * Update symbols (Closes: #884937)
+  * d/patches: Refresh cmake buildsystem to use external version string.
+  * d/control: Update Vcs url to point to Salsa platform.
+
+ -- Boyuan Yang <073plan@gmail.com>  Fri, 02 Feb 2018 22:25:15 +0800
+
+libsimpleini (4.17+dfsg-2) unstable; urgency=medium
+
+  [ Boyuan Yang ]
+  * Mark packages as M-A: same.
+  * Apply "wrap-and-sort -abst".
+
+  [ Yangfl ]
+  * Update symbols (Closes: #884937)
+
+ -- Boyuan Yang <073plan@gmail.com>  Thu, 04 Jan 2018 16:57:50 +0800
+
+libsimpleini (4.17+dfsg-1) unstable; urgency=medium
+
+  * Initial release (Closes: #884277)
+
+ -- Yangfl <mmyangfl@gmail.com>  Wed, 13 Dec 2017 16:33:54 +0800

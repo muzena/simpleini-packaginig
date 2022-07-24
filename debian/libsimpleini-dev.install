@@ -1,0 +1,4 @@
+usr/include/SimpleIni.h
+usr/lib/*/libsimpleini.so
+usr/lib/*/libsimpleini.a
+usr/lib/*/pkgconfig/simpleini.pc

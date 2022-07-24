@@ -1,0 +1,4 @@
+version=4
+opts="dversionmangle=s/\+(debian|dfsg|ds|deb)(\.\d+)?$//,repacksuffix=+dfsg,filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%simpleini-$1.tar.gz%" \
+   https://github.com/brofield/simpleini/tags \
+   (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian uupdate

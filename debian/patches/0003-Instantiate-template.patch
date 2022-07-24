@@ -1,0 +1,52 @@
+From dab774259399d19ec991c0d0310a1a5ef1fae537 Mon Sep 17 00:00:00 2001
+From: yangfl <yangfl@users.noreply.github.com>
+Date: Sat, 18 Jul 2020 01:44:50 +0800
+Subject: [PATCH 3/3] Instantiate template
+
+---
+ SimpleIni.cpp | 12 ++++++++++++
+ SimpleIni.h   |  2 ++
+ 2 files changed, 14 insertions(+)
+ create mode 100644 SimpleIni.cpp
+
+diff --git a/SimpleIni.cpp b/SimpleIni.cpp
+new file mode 100644
+index 0000000..d134526
+--- /dev/null
++++ b/SimpleIni.cpp
+@@ -0,0 +1,12 @@
++#define SI_IMPLEMENTATION
++#include "SimpleIni.h"
++
++template class CSimpleIniTempl<char,
++    SI_NoCase<char>,SI_ConvertA<char> >;
++template class CSimpleIniTempl<char,
++    SI_Case<char>,SI_ConvertA<char> >;
++
++template class CSimpleIniTempl<UChar,
++    SI_NoCase<UChar>,SI_ConvertW<UChar> >;
++template class CSimpleIniTempl<UChar,
++    SI_Case<UChar>,SI_ConvertW<UChar> >;
+diff --git a/SimpleIni.h b/SimpleIni.h
+index ef3c7d0..8bff535 100644
+--- a/SimpleIni.h
++++ b/SimpleIni.h
+@@ -1336,6 +1336,7 @@ private:
+     int m_nOrder;
+ };
+ 
++#ifdef SI_IMPLEMENTATION
+ // ---------------------------------------------------------------------------
+ //                                  IMPLEMENTATION
+ // ---------------------------------------------------------------------------
+@@ -2818,6 +2819,7 @@ CSimpleIniTempl<SI_CHAR,SI_STRLESS,SI_CONVERTER>::DeleteString(
+         }
+     }
+ }
++#endif
+ 
+ // ---------------------------------------------------------------------------
+ //                              CONVERSION FUNCTIONS
+-- 
+2.35.1
+
