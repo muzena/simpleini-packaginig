@@ -1,13 +1,12 @@
 #!/usr/bin/make -f
 #export DH_VERBOSE = 1
 
-
+export COMPILE_FLAGS="-O0"
 export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-
-export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-export DEB_CXXFLAGS_MAINT_APPEND = -Wall -pedantic
-export DEB_LDFLAGS_MAINT_APPEND =
-
+#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
+export DEB_CFLAGS_MAINT_APPEND  = -Wno-error
+#export DEB_CXXFLAGS_MAINT_APPEND = -Wall -pedantic
+export DEB_LDFLAGS_MAINT_APPEND = -Wno-error
 include /usr/share/dpkg/architecture.mk
 include /usr/share/dpkg/pkg-info.mk
 
