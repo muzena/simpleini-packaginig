@@ -68,7 +68,7 @@ index d4cd055..9caa2b8 100644
 +
 +.PHONY: clean
 +clean:
-+	rm -f $(ARLIB) $(SHLIB) $(OBJS) $(PCFILE) *.o testsi test*-out*.ini
++	rm -fr $(ARLIB) $(SHLIB) $(OBJS) $(PCFILE) *.o testsi test*-out*.ini
 +
 +.PHONY: install-shared
 +install-shared: $(SHLIB)
